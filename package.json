@@ -1,0 +1,37 @@
+{
+  "name": "task-management-app",
+  "version": "1.0.0",
+  "description": "AngularJS Task Management Application with JWT Authentication",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8080 --open=/ --watch=app,styles,index.html",
+    "start:static": "http-server -p 8080 -c-1",
+    "dev": "live-server --port=8080 --open=/ --watch=app,styles,index.html",
+    "test": "karma start karma.conf.js",
+    "test:single": "karma start karma.conf.js --single-run"
+  },
+  "keywords": [
+    "angularjs",
+    "task-management",
+    "jwt",
+    "authentication"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "jasmine-core": "^5.1.0",
+    "karma": "^6.4.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-route": "^1.8.3",
+    "angular-mocks": "^1.8.3"
+  }
+}
+

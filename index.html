@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskManagementApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar" ng-controller="NavbarController as navCtrl">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Task Manager</h1>
+            </div>
+            <div class="nav-menu" ng-if="navCtrl.isAuthenticated()">
+                <a href="#/tasks" class="nav-link">Tasks</a>
+                <a href="#/tasks/add" class="nav-link">Add Task</a>
+                <span class="nav-user">{{ navCtrl.getCurrentUser() }}</span>
+                <button class="btn-logout" ng-click="navCtrl.logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div ng-view></div>
+    </main>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/services/auth.service.js"></script>
+    <script src="app/services/task.service.js"></script>
+    <script src="app/controllers/navbar.controller.js"></script>
+    <script src="app/controllers/login.controller.js"></script>
+    <script src="app/controllers/task-list.controller.js"></script>
+    <script src="app/controllers/task-form.controller.js"></script>
+    <script src="app/filters/task.filter.js"></script>
+    <script src="app/directives/task-card.directive.js"></script>
+    <script src="app/directives/drag-drop.directive.js"></script>
+</body>
+</html>
+

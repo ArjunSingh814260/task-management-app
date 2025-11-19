@@ -1,0 +1,31 @@
+<div class="task-card">
+    <div class="task-header">
+        <h3 class="task-title">{{ task.title }}</h3>
+        <span class="task-status" ng-class="task.status | statusClass">
+            {{ task.status }}
+        </span>
+    </div>
+    <div class="task-body">
+        <p class="task-description">{{ task.description }}</p>
+        <div class="task-meta">
+            <span class="task-due-date">
+                <strong>Due:</strong> {{ task.dueDate | formatDate }}
+            </span>
+        </div>
+    </div>
+    <div class="task-actions">
+        <button 
+            class="btn btn-sm btn-secondary" 
+            ng-click="onEdit({taskId: task.id})"
+            ng-disabled="!canEdit({task: task})">
+            Edit
+        </button>
+        <button 
+            class="btn btn-sm btn-success" 
+            ng-click="onComplete({taskId: task.id})"
+            ng-disabled="task.status === 'Completed'">
+            Mark Complete
+        </button>
+    </div>
+</div>
+
